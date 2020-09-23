@@ -1,0 +1,314 @@
+VERSION 5.00
+Begin VB.Form authen 
+   Caption         =   "Authentication set-up"
+   ClientHeight    =   3450
+   ClientLeft      =   60
+   ClientTop       =   405
+   ClientWidth     =   5415
+   ControlBox      =   0   'False
+   LinkTopic       =   "Form1"
+   ScaleHeight     =   3450
+   ScaleWidth      =   5415
+   StartUpPosition =   1  'CenterOwner
+   Begin VB.CommandButton cmdOk 
+      Caption         =   "&OK"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   375
+      Left            =   2160
+      TabIndex        =   5
+      Top             =   3000
+      Width           =   1095
+   End
+   Begin VB.TextBox txtRec4 
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   375
+      Left            =   4080
+      MaxLength       =   5
+      TabIndex        =   4
+      Top             =   2400
+      Width           =   1215
+   End
+   Begin VB.TextBox txtRec3 
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   375
+      Left            =   2760
+      MaxLength       =   5
+      TabIndex        =   3
+      Top             =   2400
+      Width           =   1215
+   End
+   Begin VB.TextBox txtRec2 
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   375
+      Left            =   1440
+      MaxLength       =   5
+      TabIndex        =   2
+      Top             =   2400
+      Width           =   1215
+   End
+   Begin VB.TextBox txtRec1 
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   375
+      Left            =   120
+      MaxLength       =   5
+      TabIndex        =   1
+      Top             =   2400
+      Width           =   1215
+   End
+   Begin VB.TextBox txtAuth4 
+      Enabled         =   0   'False
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   375
+      Left            =   4080
+      Locked          =   -1  'True
+      MaxLength       =   5
+      TabIndex        =   8
+      TabStop         =   0   'False
+      Top             =   1680
+      Width           =   1215
+   End
+   Begin VB.TextBox txtAuth3 
+      Enabled         =   0   'False
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   375
+      Left            =   2760
+      Locked          =   -1  'True
+      MaxLength       =   5
+      TabIndex        =   7
+      TabStop         =   0   'False
+      Top             =   1680
+      Width           =   1215
+   End
+   Begin VB.TextBox txtAuth2 
+      Enabled         =   0   'False
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   375
+      Left            =   1440
+      Locked          =   -1  'True
+      MaxLength       =   5
+      TabIndex        =   6
+      TabStop         =   0   'False
+      Top             =   1680
+      Width           =   1215
+   End
+   Begin VB.TextBox txtAuth1 
+      Enabled         =   0   'False
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   375
+      Left            =   120
+      Locked          =   -1  'True
+      MaxLength       =   5
+      TabIndex        =   0
+      TabStop         =   0   'False
+      Top             =   1680
+      Width           =   1215
+   End
+   Begin VB.Label Label2 
+      Alignment       =   2  'Center
+      Caption         =   $"authen.frx":0000
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00800000&
+      Height          =   1020
+      Left            =   120
+      TabIndex        =   9
+      Top             =   240
+      Width           =   5055
+   End
+End
+Attribute VB_Name = "authen"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+Dim Tries As Integer
+
+Private Sub cmdOk_Click()
+    Dim TempStr As String
+    Dim Ret As Boolean
+    
+    TempStr = txtRec1.Text
+    TempStr = TempStr + txtRec2.Text
+    TempStr = TempStr + txtRec3.Text
+    TempStr = TempStr + txtRec4.Text
+    If TempStr <> AuthString Then
+        Tries = Tries + 1
+        If Tries = 3 Then
+            MsgBox "Incorrect authentication, ending program.", vbOKOnly + vbCritical, "Incorrect"
+            Unload Me
+            End
+        Else
+            Exit Sub
+        End If
+    Else
+        'add code to write value to registry
+        'Be certain to enter project name the same
+        SaveSetting "Project", "Options", "Auth", AuthString
+        AuthKey = True
+        Unload Me
+        Exit Sub
+    End If
+    
+End Sub
+
+Private Sub Form_Load()
+    Tries = 0
+    Me.Height = 3915
+    Me.Width = 5535
+End Sub
+
+
+Private Sub txtRec1_KeyPress(KeyAscii As Integer)
+
+    Select Case KeyAscii
+        Case 8, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86
+            Exit Sub
+    End Select
+    
+    If KeyAscii > 102 And KeyAscii < 119 Then
+        KeyAscii = KeyAscii - 32
+    Else
+        KeyAscii = 0
+    End If
+    
+    If Len(txtRec1.Text) > 3 Then
+        txtRec2.SetFocus
+    End If
+    
+End Sub
+
+Private Sub txtRec2_KeyPress(KeyAscii As Integer)
+
+    Select Case KeyAscii
+        Case 8, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86
+            Exit Sub
+    End Select
+    
+    If KeyAscii > 102 And KeyAscii < 119 Then
+        KeyAscii = KeyAscii - 32
+    Else
+        KeyAscii = 0
+    End If
+    
+    If Len(txtRec2.Text) > 3 Then
+        txtRec3.SetFocus
+    End If
+End Sub
+
+Private Sub txtRec3_KeyPress(KeyAscii As Integer)
+
+    Select Case KeyAscii
+        Case 8, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86
+            Exit Sub
+    End Select
+    
+    If KeyAscii > 102 And KeyAscii < 119 Then
+        KeyAscii = KeyAscii - 32
+    Else
+        KeyAscii = 0
+    End If
+    
+    If Len(txtRec3.Text) > 3 Then
+        txtRec4.SetFocus
+    End If
+End Sub
+
+Private Sub txtRec4_KeyPress(KeyAscii As Integer)
+
+    Select Case KeyAscii
+        Case 8, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86
+            Exit Sub
+    End Select
+    
+    If KeyAscii > 102 And KeyAscii < 119 Then
+        KeyAscii = KeyAscii - 32
+    Else
+        KeyAscii = 0
+    End If
+    
+    If Len(txtRec4.Text) > 3 Then
+        cmdOk.SetFocus
+    End If
+  
+End Sub
